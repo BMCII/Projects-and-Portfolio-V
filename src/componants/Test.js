@@ -16,7 +16,7 @@ class Test extends React.Component {
   let type = 'multiple';
   
   //url
-  const url = `https://cors-anywhere.herokuapp.com/https://opentdb.com/api.php?amount=${amount}&category=${category}&difficulty=${difficulty}&type=${type}`;
+  const url = `https://opentdb.com/api.php?amount=${amount}&category=${category}&difficulty=${difficulty}&type=${type}`;
   
       
       fetch(url)

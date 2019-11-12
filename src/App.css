@@ -1,10 +1,4 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-}
 
 .App-header {
   background-color: #282c34;
@@ -15,8 +9,32 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+
 }
 
-.App-link {
-  color: #09d3ac;
+body{
+  background-image: url(./images/subtle_white_feathers.png);
+  background-attachment: fixed;
+}
+h1 {
+  color: blue;
+  text-align: center;
+  margin: 1em !important;
+}
+
+#selectionForm{
+  background-color: lightgoldenrodyellow;
+  border: 1px solid #282c34;
+  padding: 2rem;
+  -webkit-box-shadow: 10px 10px 22px -12px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 22px -12px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 22px -12px rgba(0,0,0,0.75);
+border-radius: 1em
+}
+
+.btn{
+  margin-top: 3em;
+  -webkit-box-shadow: 10px 10px 22px -12px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 22px -12px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 22px -12px rgba(0,0,0,0.75);
 }

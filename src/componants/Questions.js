@@ -1,18 +1,45 @@
 import React from 'react'
+import Card from 'react-bootstrap/Card'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+import ButtonGroup from 'react-bootstrap/ButtonGroup'
+import Button from 'react-bootstrap/Button'
+
 
 const Questions = ({ questions }) => {
   return (
     <div>
-      <center><h1>Test Questions</h1></center>
+    <h1>Test Questions</h1>
       {questions.map((question) => (
-        <div className="card">
-          <div className="card-body">
-            <h5 className="card-title">{question.category}</h5>
-            <h6 className="card-subtitle mb-2 text-muted">{question.question}</h6>
-            <p className="card-text">{question.correct_answer}</p>
-          </div>
-        </div>
-      ))}
+
+<Container>
+
+<Row>
+  <Col md={{ span: 10, offset: 1 }}><Card>
+  <Card.Body>
+{question.question}
+<div className="d-flex flex-column">
+
+
+<ButtonGroup className="mt-3">
+  <Button variant="secondary">{question.correct_answer}</Button>
+  <Button variant="secondary">{question.incorrect_answers[0]}</Button>
+  <Button variant="secondary">{question.incorrect_answers[1]}</Button>
+  <Button variant="secondary">{question.incorrect_answers[1]}t</Button>
+</ButtonGroup>
+
+</div>
+
+  </Card.Body>
+</Card>
+</Col>
+</Row>
+<br></br>
+
+</Container>
+
+))}
     </div>
   )
 };

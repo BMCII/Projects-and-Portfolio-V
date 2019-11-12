@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import Button from 'react-bootstrap/Button';
 
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Selection from './componants/Selection';
 import Test from './componants/Test';
 import Results from './componants/Results';
+import Col from 'react-bootstrap/Col'
 
 
 class App extends Component {
@@ -20,7 +22,11 @@ class App extends Component {
   return (
     <div className="App">
       {this.state.selected ? <Test /> : <Selection />}
-<button onClick={this.selected}>Load Test</button>
+      <Col md={{ span: 6, offset: 3 }}>
+      <Button onClick={this.loadTest} variant="primary" size="lg" block>
+    Load Test
+  </Button>
+  </Col>
     </div>
   );
 }
