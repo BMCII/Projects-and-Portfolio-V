@@ -1,5 +1,6 @@
 import React from 'react'
 import Questions from './Questions'
+import Selection from './Selection'
 
 class Test extends React.Component {
 
@@ -7,26 +8,33 @@ class Test extends React.Component {
       questions: []
     }
   
-    componentDidMount() {
+  //   componentDidMount() {
   
-      // url variables
-  let amount = 10;
-  let category = 15;
-  let difficulty = 'easy';
-  let type = 'multiple';
+  //     // url variables
+
+  //     // const [amount, setAmount] = useState('')
+  // let amount = 10;
+  // let category = 15;
+  // let difficulty = 'easy';
+  // let type = 'multiple';
   
-  //url
-  const url = `https://opentdb.com/api.php?amount=${amount}&category=${category}&difficulty=${difficulty}&type=${type}`;
+
+  
+  // //url
+  // const url = `https://opentdb.com/api.php?amount=${amount}&category=${category}&difficulty=${difficulty}&type=${type}`;
   
       
-      fetch(url)
-      .then(res => res.json())
-      .then((data) => {
-        this.setState({ questions: data.results })
-      })
-      .catch(console.log)
-    }
+  //     fetch(url)
+  //     .then(res => res.json())
+  //     .then((data) => {
+  //       this.setState({ questions: data.results })
+  //     })
+  //     .catch(console.log)
+  //   }
   
+
+
+
     render () {
       return (
   <Questions questions={this.state.questions} />
