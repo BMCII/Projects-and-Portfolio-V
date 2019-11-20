@@ -1,105 +1,88 @@
-import React from 'react'
-import Form from 'react-bootstrap/Form'
-import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
+import React from 'react';
+import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col'
-import Test from './Test'
+
+
 
 class Selection extends React.Component {
- 
-  
+
+  //sets state
   constructor(props){
     super(props);
-    this.state = { subject: 'math', questions: '10', difficulty: 'easy' };
-
+    this.state = { 
+      category: '19', 
+      amount: '10', 
+      difficulty: 'easy' 
+    };
   }
- 
+
+  //changes state to user input   
   handleChange = ({ target }) => {
-     this.setState({ [target.name]: target.value });
+   this.setState({ [target.name]: target.value }); 
   };
 
-  componentDidMount() {
-  
-    // url variables
-
-    // const [amount, setAmount] = useState('')
-let amount = 10;
-// let category = 15;
-let difficulty = 'easy';
-let type = 'multiple';
-
-
-
-//url
-const url = `https://opentdb.com/api.php?amount=${amount}&category=${this.state.subject}&difficulty=${difficulty}&type=${type}`;
-
-    
-    fetch(url)
-    .then(res => res.json())
-    .then((data) => {
-      this.setState({ questions: data.results })
-    })
-    .catch(console.log)
+  //puts state into data object
+  buttonClick = () => {
+    console.log('button clicked');
+    let data = {
+      difficulty:this.state.difficulty, 
+      amount:this.state.amount, 
+      category:this.state.category
+    }
+    this.props.formSubmit(data)       
   }
+     
+  render() {
+    return (
+      <div className=''>
+        <h1>Selection</h1>
+        <form>
+          <label htmlFor="subject">Subject:</label>
+          <select 
+            name="category" 
+            id="catigory"
+            value={this.state.category}
+            onChange={this.handleChange}
+            >
+            <option value="19">Math</option>
+            <option value="23">History</option>
+            <option value="22">Geography</option>
+            <option value="12">Music</option>
+          </select>
+          <label htmlFor="questions">Questions:</label>
+          <select 
+            name="amount" 
+            id="amount"
+            value={this.state.amount}
+            onChange={this.handleChange}
+            >
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="25">25</option>
+            <option value="50">50</option>
+          </select>
+          <label htmlFor="difficulty">Difficulty:</label>
+          <select 
+            name="difficulty" 
+            id="difficulty"
+            ref="difficulty"
+            value={this.state.difficulty}
+            onChange={this.handleChange}
+            >
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+          </select>
 
-  render(){
-  return (
-    
-    <div>
-      <h1>Create Your Test</h1>
-      <Container>
-        <Row>
-        <Col md={{ span: 6, offset: 3 }}>
-<Form id='selectionForm'>
-  <Form.Group controlId="selectionForm.ControlInput1">
-    <Form.Label>Name</Form.Label>
-    <Form.Control type="text" placeholder="name" />
-  </Form.Group>
-  <Form.Group controlId="selectionForm.ControlSelect1">
-    <Form.Label>Number of Questions</Form.Label>
-    <Form.Control as="select">
-      <option>5</option>
-      <option>10</option>
-      <option>15</option>
-      <option>20</option>
-      <option>25</option>
-    </Form.Control>
-  </Form.Group>
-  <Form.Group controlId="selectionForm.ControlSelect1">
-    <Form.Label>Subject</Form.Label>
-    <Form.Control 
-    as="select"
-    name="subject" 
-    id="subject"
-    ref={this.myRef}
-    value={this.state.subject}
-    onChange={this.handleChange}
-    >
-      <option>History</option>
-      <option>Math</option>
-      <option>Sports</option>
-      <option>Music</option>
-      <option>Television</option>
-    </Form.Control>
-  </Form.Group>
-  <Form.Group controlId="selectionForm.ControlSelect1">
-    <Form.Label>Diffuculty</Form.Label>
-    <Form.Control as="select">
-      <option>Easy</option>
-      <option>Medium</option>
-      <option>Hard</option>
-    </Form.Control>
-  </Form.Group>
-</Form>
-</Col>
-</Row>
-
-
-</Container>
-      <Test subject={this.state.subject}/>
-    </div>
-  )
+          <Col md={{ span: 6, offset: 3 }}>
+            <Button onClick={this.buttonClick} variant="primary" size="lg" block>
+              Load Test
+            </Button>
+          </Col>
+        </form>
+      </div>
+    );
+  }
 }
-};
 
-export default Selection
+export default Selection;

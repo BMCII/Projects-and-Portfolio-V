@@ -6,45 +6,35 @@ import Col from 'react-bootstrap/Col'
 import ButtonGroup from 'react-bootstrap/ButtonGroup'
 import Button from 'react-bootstrap/Button'
 
-
-
-
 const Questions = ({ questions }) => {
-
-
   
   return (
     <div>
-    <h1>Test Questions</h1>
-      {questions.map((question) => (
+      <h1>Test Questions</h1>
 
-<Container>
-
-<Row>
-  <Col md={{ span: 10, offset: 1 }}><Card>
-  <Card.Body>
-{question.question}
-<div className="d-flex flex-column">
-
-
-<ButtonGroup className="mt-3">
-  <Button variant="secondary">{question.correct_answer}</Button>
-  <Button variant="secondary">{question.incorrect_answers[0]}</Button>
-  <Button variant="secondary">{question.incorrect_answers[1]}</Button>
-  <Button variant="secondary">{question.incorrect_answers[1]}t</Button>
-</ButtonGroup>
-
-</div>
-
-  </Card.Body>
-</Card>
-</Col>
-</Row>
-<br></br>
-
-</Container>
-
-))}
+      {questions.map((question,i) => (
+        <Container key= {i}>
+          <Row>
+            <Col md={{ span: 10, offset: 1 }}>
+              <Card>
+                <Card.Body>
+                  {question.question}
+                  <div className="d-flex flex-column">
+                    <ButtonGroup className="mt-3">
+                      <Button variant="secondary">{question.correct_answer}</Button>
+                      <Button variant="secondary">{question.incorrect_answers[0]}</Button>
+                      <Button variant="secondary">{question.incorrect_answers[1]}</Button>
+                      <Button variant="secondary">{question.incorrect_answers[2]}</Button>
+                    </ButtonGroup>
+                  </div>
+                </Card.Body>
+              </Card>
+            </Col>
+          </Row>
+          <br></br> 
+        </Container>
+        ))
+      }
     </div>
   )
 };

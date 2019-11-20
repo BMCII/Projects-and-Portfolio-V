@@ -1,35 +1,42 @@
 import React, { Component } from 'react';
-import Button from 'react-bootstrap/Button';
-
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Selection from './componants/Selection';
 import Test from './componants/Test';
-import Results from './componants/Results';
-import Col from 'react-bootstrap/Col'
+
 
 
 class App extends Component {
-  
 
+  //creates state
   state = {
-    selected: false
+    selected: false,
+    difficulty: '',
+    amount: '',
+    category: ''
   }
 
-  loadTest = () => this.setState({selected: true})
+  //brings data object from Selection.js and sets state to user input
+  loadTest = (dataObject) => {
+    console.log('load test', dataObject)
+    this.setState(dataObject)
+    this.setState({selected: true})
+  }
+
+  scoreTest = () => {
+
+  }
 
   render(){
-  return (
-    <div className="App">
-      {this.state.selected ? <Test /> : <Selection />}
-      <Col md={{ span: 6, offset: 3 }}>
-      <Button onClick={this.loadTest} variant="primary" size="lg" block>
-    Load Test
-  </Button>
-  </Col>
-    </div>
-  );
-}
+    return (
+      <div className="App">
+        {this.state.selected ? 
+          <Test difficulty={this.state.difficulty} amount={this.state.amount} category={this.state.category}/> : 
+          <Selection formSubmit={this.loadTest} 
+        />}
+      </div>
+    );
+  }
 }
 
 export default App;
