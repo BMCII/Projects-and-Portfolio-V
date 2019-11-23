@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/BMCII/Projects-and-Portfolio-V/static/css/main.542a3781.chunk.css",
+    "main.js": "/BMCII/Projects-and-Portfolio-V/static/js/main.be69d8b7.chunk.js",
+    "main.js.map": "/BMCII/Projects-and-Portfolio-V/static/js/main.be69d8b7.chunk.js.map",
+    "runtime-main.js": "/BMCII/Projects-and-Portfolio-V/static/js/runtime-main.a4adee70.js",
+    "runtime-main.js.map": "/BMCII/Projects-and-Portfolio-V/static/js/runtime-main.a4adee70.js.map",
+    "static/css/2.b0bb7f2c.chunk.css": "/BMCII/Projects-and-Portfolio-V/static/css/2.b0bb7f2c.chunk.css",
+    "static/js/2.e6210682.chunk.js": "/BMCII/Projects-and-Portfolio-V/static/js/2.e6210682.chunk.js",
+    "static/js/2.e6210682.chunk.js.map": "/BMCII/Projects-and-Portfolio-V/static/js/2.e6210682.chunk.js.map",
+    "index.html": "/BMCII/Projects-and-Portfolio-V/index.html",
+    "precache-manifest.39bf39105b9a23abb512b9124e456928.js": "/BMCII/Projects-and-Portfolio-V/precache-manifest.39bf39105b9a23abb512b9124e456928.js",
+    "service-worker.js": "/BMCII/Projects-and-Portfolio-V/service-worker.js",
+    "static/css/2.b0bb7f2c.chunk.css.map": "/BMCII/Projects-and-Portfolio-V/static/css/2.b0bb7f2c.chunk.css.map",
+    "static/css/main.542a3781.chunk.css.map": "/BMCII/Projects-and-Portfolio-V/static/css/main.542a3781.chunk.css.map",
+    "static/media/App.css": "/BMCII/Projects-and-Portfolio-V/static/media/subtle_white_feathers.41afc6c2.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a4adee70.js",
+    "static/css/2.b0bb7f2c.chunk.css",
+    "static/js/2.e6210682.chunk.js",
+    "static/css/main.542a3781.chunk.css",
+    "static/js/main.be69d8b7.chunk.js"
+  ]
+}
