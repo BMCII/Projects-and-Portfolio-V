@@ -1,18 +1,34 @@
-import React from 'react'
-import Questions from './Questions'
+import React from 'react';
+import Questions from './Questions';
 import Button from 'react-bootstrap/Button';
-import Col from 'react-bootstrap/Col'
+import Col from 'react-bootstrap/Col';
+import Results from './Results';
 
 class Test extends React.Component {
 
   //sets state
   state = {
-    questions: []
+    questions: [],
+    score: 0,
+    complete: false,
+    count: 0
   }
 
-  buttonClick = () => {
-    console.log('button clicked');       
+  //puts test score into score object and loads Results.js
+  testButtonClick = () => {
+    console.log('button clicked'); 
+    this.setState({complete: true}) 
+    let score = {
+      score:this.state.count
+    }
+    this.props.testSubmit(score)
+    
+    console.log('score',score)
   }
+
+  increment(){
+    this.setState({ counts : this.state.count + 1});
+}
 
   //API call
   componentDidMount() {
@@ -31,12 +47,17 @@ class Test extends React.Component {
   render () {
     return (
       <div className=''>
-        <Questions questions={this.state.questions} />
-          <Col md={{ span: 6, offset: 3 }}>
-            <Button onClick={this.buttonClick} variant="primary" size="lg" block>
+        {this.state.complete ? 
+         <Results score={this.state.score} /> :
+         <Questions score={this.state.score} questions={this.state.questions} count={this.state.count} increment={this.increment.bind(this)}/> 
+        }      
+      
+          <Col md={{ span: 8, offset: 2 }}> 
+            <Button onClick={this.testButtonClick} variant="primary" size="lg" block>
               Score Test
             </Button>
           </Col>
+     
       </div>
     );
   }

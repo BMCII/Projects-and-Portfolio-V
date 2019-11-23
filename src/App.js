@@ -3,6 +3,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Selection from './componants/Selection';
 import Test from './componants/Test';
+import Navbar from 'react-bootstrap/Navbar'
 
 
 
@@ -13,7 +14,7 @@ class App extends Component {
     selected: false,
     difficulty: '',
     amount: '',
-    category: ''
+    category: '',
   }
 
   //brings data object from Selection.js and sets state to user input
@@ -23,17 +24,26 @@ class App extends Component {
     this.setState({selected: true})
   }
 
-  scoreTest = () => {
+  //brings test score from Test.js
+  scoreTest = (testScore) => {
+    this.setState(testScore)
+    console.log('Test Score',testScore);
+  }
 
+  testCount = (count) => {
+    this.setState(count)
+    console.log('count :', count)
   }
 
   render(){
     return (
       <div className="App">
+        <Navbar bg='dark'></Navbar>
         {this.state.selected ? 
-          <Test difficulty={this.state.difficulty} amount={this.state.amount} category={this.state.category}/> : 
+          <Test testCount={this.testCount} testSubmit={this.scoreTest} difficulty={this.state.difficulty} amount={this.state.amount} category={this.state.category}/> : 
           <Selection formSubmit={this.loadTest} 
         />}
+        <Navbar bg='dark' fixed="bottom" ></Navbar>
       </div>
     );
   }

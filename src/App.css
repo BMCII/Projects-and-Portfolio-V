@@ -1,4 +1,5 @@
-
+/* font-family: 'Oswald', sans-serif;
+font-family: 'Baskervville', serif; */
 
 .App-header {
   background-color: #282c34;
@@ -15,11 +16,26 @@
 body{
   background-image: url(./images/subtle_white_feathers.png);
   background-attachment: fixed;
+  font-family: 'Oswald', sans-serif;
+  
 }
-h1 {
-  color: blue;
+h1{
+  color: rgb(25, 25, 29);
   text-align: center;
   margin: 1em !important;
+  font-size: 3em;
+}
+
+h2{
+  color: rgb(25, 25, 29);
+  text-align: center;
+}
+
+p{
+  color: rgb(25, 25, 29);
+  text-align: center;
+  font-family: 'Baskervville', serif;
+  font-size: 1.5em;
 }
 
 #selectionForm{
@@ -33,6 +49,19 @@ border-radius: 1em
 }
 
 .btn{
+  margin-bottom: 4em;
+  margin-top: 2em;
+  -webkit-box-shadow: 10px 10px 22px -12px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 22px -12px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 22px -12px rgba(0,0,0,0.75);
+}
+
+.navbar{
+ 
+  height: 3em;
+}
+
+.card{
   margin-top: 3em;
   -webkit-box-shadow: 10px 10px 22px -12px rgba(0,0,0,0.75);
   -moz-box-shadow: 10px 10px 22px -12px rgba(0,0,0,0.75);
